@@ -120,6 +120,11 @@ public class login extends javax.swing.JFrame {
         tx_nom.setEnabled(false);
 
         cb_canpod.setEnabled(false);
+        cb_canpod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cb_canpodMouseClicked(evt);
+            }
+        });
         cb_canpod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_canpodActionPerformed(evt);
@@ -405,27 +410,31 @@ public class login extends javax.swing.JFrame {
         int mor=0;
         if (cb_canpod.getSelectedItem()=="1") {
             for (int i = 0; i < 1; i++) {
-                des=JOptionPane.showInputDialog("Ingrese un nivel de poder");
+                des=JOptionPane.showInputDialog("Ingrese un nivel de poder numero "+(i+1));
                 niv=JOptionPane.showInputDialog("Ingrese lamdescripcion del poder");
                 mor=JOptionPane.showConfirmDialog(this, "Es mortal?");
                 
             }
         }else if (cb_canpod.getSelectedItem()=="2") {
             for (int i = 0; i < 2; i++) {
-                des=JOptionPane.showInputDialog("Ingrese un nivel de poder");
+                des=JOptionPane.showInputDialog("Ingrese un nivel de poder numero "+(i+1));
                 niv=JOptionPane.showInputDialog("Ingrese lamdescripcion del poder");
                 mor=JOptionPane.showConfirmDialog(this, "Es mortal?");
                 
             }
         }else if (cb_canpod.getSelectedItem()=="3") {
             for (int i = 0; i < 3; i++) {
-                des=JOptionPane.showInputDialog("Ingrese un nivel de poder");
+                des=JOptionPane.showInputDialog("Ingrese un nivel de poder numero "+(i+1));
                 niv=JOptionPane.showInputDialog("Ingrese lamdescripcion del poder");
                 mor=JOptionPane.showConfirmDialog(this, "Es mortal?");
                 
             }
         }
     }//GEN-LAST:event_cb_canpodActionPerformed
+
+    private void cb_canpodMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_canpodMouseClicked
+       
+    }//GEN-LAST:event_cb_canpodMouseClicked
 
     /**
      * @param args the command line arguments
