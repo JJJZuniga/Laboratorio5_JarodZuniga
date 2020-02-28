@@ -5,6 +5,8 @@
  */
 package laboratorio5_jarodzuniga;
 
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,8 +32,29 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         todo = new javax.swing.JDialog();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        bt_in = new javax.swing.JButton();
+        bt_exit = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        cb_tipo = new javax.swing.JComboBox<>();
+        tx_nom = new javax.swing.JTextField();
+        cb_canpod = new javax.swing.JComboBox<>();
+        tx_ed = new javax.swing.JTextField();
+        tx_plan = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        tx_altura = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tx_villmuer = new javax.swing.JTextField();
+        bt_agregar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,29 +64,169 @@ public class login extends javax.swing.JFrame {
         bt_salir = new javax.swing.JButton();
         ps_pass = new javax.swing.JPasswordField();
 
-        jButton1.setText("jButton1");
+        bt_in.setText("Ingresar");
+        bt_in.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_inMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        bt_exit.setText("Salir");
+        bt_exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_exitMouseClicked(evt);
+            }
+        });
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        jScrollPane3.setViewportView(jTree1);
+
+        jLabel4.setText("Tipo de superpersona");
+
+        jLabel5.setText("Cantidad de superpoderes");
+
+        jLabel6.setText("Nombre");
+
+        jLabel7.setText("Edad");
+
+        jLabel8.setText("Planeta de origen");
+
+        cb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Super Heroes", "Super Villanos" }));
+        cb_tipo.setEnabled(false);
+        cb_tipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cb_tipoMouseClicked(evt);
+            }
+        });
+
+        tx_nom.setEnabled(false);
+
+        cb_canpod.setEnabled(false);
+
+        tx_ed.setEnabled(false);
+
+        tx_plan.setEnabled(false);
+
+        jLabel9.setText("Altura");
+
+        tx_altura.setEnabled(false);
+
+        jLabel10.setText("...");
+
+        tx_villmuer.setEnabled(false);
+
+        bt_agregar.setText("agregar");
+        bt_agregar.setEnabled(false);
+        bt_agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout todoLayout = new javax.swing.GroupLayout(todo.getContentPane());
         todo.getContentPane().setLayout(todoLayout);
         todoLayout.setHorizontalGroup(
             todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(todoLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(154, 154, 154))
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(todoLayout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(bt_in, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(todoLayout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(todoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addComponent(bt_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(146, 146, 146))
+                    .addGroup(todoLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(todoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cb_tipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cb_canpod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tx_nom)
+                    .addComponent(tx_ed)
+                    .addComponent(tx_plan)
+                    .addComponent(tx_altura)
+                    .addComponent(tx_villmuer, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77))
+            .addGroup(todoLayout.createSequentialGroup()
+                .addGap(265, 265, 265)
+                .addComponent(bt_agregar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         todoLayout.setVerticalGroup(
             todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, todoLayout.createSequentialGroup()
-                .addContainerGap(404, Short.MAX_VALUE)
+            .addGroup(todoLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(84, 84, 84))
+                    .addComponent(jLabel4)
+                    .addComponent(cb_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(cb_canpod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(tx_nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(tx_ed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(tx_plan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(tx_altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tx_villmuer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addComponent(bt_agregar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addGap(33, 33, 33)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_in, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -175,6 +338,40 @@ public class login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bt_ingresarMouseClicked
 
+    private void bt_inMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_inMouseClicked
+       cb_tipo.setEnabled(true);
+       cb_canpod.setEnabled(true);
+       tx_nom.setEnabled(true);
+       tx_ed.setEnabled(true);
+       tx_ed.setEnabled(true);
+       tx_plan.setEnabled(true);
+       tx_altura.setEnabled(true);
+       tx_villmuer.setEnabled(true);
+       bt_agregar.setEnabled(true);
+    }//GEN-LAST:event_bt_inMouseClicked
+
+    private void bt_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_exitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_bt_exitMouseClicked
+
+    private void bt_agregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregarMouseClicked
+        
+       
+    }//GEN-LAST:event_bt_agregarMouseClicked
+
+    private void cb_tipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_tipoMouseClicked
+        if (cb_tipo.getSelectedItem()=="Super Heroes") {
+            DefaultComboBoxModel c2 = (DefaultComboBoxModel) cb_canpod.getModel();
+            c2.addElement("1");
+            c2.addElement("2");
+            c2.addElement("3");
+            cb_canpod.setModel(c2);
+            
+        }else{
+            cb_canpod.add("2\n 3", this);
+        }
+    }//GEN-LAST:event_cb_tipoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -211,16 +408,40 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_agregar;
+    private javax.swing.JButton bt_exit;
+    private javax.swing.JButton bt_in;
     private javax.swing.JButton bt_ingresar;
     private javax.swing.JButton bt_salir;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> cb_canpod;
+    private javax.swing.JComboBox<String> cb_tipo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTree jTree1;
     private javax.swing.JPasswordField ps_pass;
     private javax.swing.JDialog todo;
+    private javax.swing.JTextField tx_altura;
+    private javax.swing.JTextField tx_ed;
+    private javax.swing.JTextField tx_nom;
+    private javax.swing.JTextField tx_plan;
     private javax.swing.JTextField tx_user;
+    private javax.swing.JTextField tx_villmuer;
     // End of variables declaration//GEN-END:variables
+    ArrayList superheroe=new ArrayList();
+    ArrayList supervillano=new ArrayList();
+    ArrayList superpoder=new ArrayList();
 }
