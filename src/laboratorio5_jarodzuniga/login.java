@@ -111,10 +111,20 @@ public class login extends javax.swing.JFrame {
                 cb_tipoMouseClicked(evt);
             }
         });
+        cb_tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_tipoActionPerformed(evt);
+            }
+        });
 
         tx_nom.setEnabled(false);
 
         cb_canpod.setEnabled(false);
+        cb_canpod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_canpodActionPerformed(evt);
+            }
+        });
 
         tx_ed.setEnabled(false);
 
@@ -133,6 +143,11 @@ public class login extends javax.swing.JFrame {
         bt_agregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bt_agregarMouseClicked(evt);
+            }
+        });
+        bt_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_agregarActionPerformed(evt);
             }
         });
 
@@ -360,17 +375,57 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_agregarMouseClicked
 
     private void cb_tipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_tipoMouseClicked
+        
+    }//GEN-LAST:event_cb_tipoMouseClicked
+
+    private void cb_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_tipoActionPerformed
         if (cb_tipo.getSelectedItem()=="Super Heroes") {
             DefaultComboBoxModel c2 = (DefaultComboBoxModel) cb_canpod.getModel();
+            c2.removeAllElements();
             c2.addElement("1");
             c2.addElement("2");
             c2.addElement("3");
             cb_canpod.setModel(c2);
             
-        }else{
-            cb_canpod.add("2\n 3", this);
+        }else if (cb_tipo.getSelectedItem()=="Super Villanos") {
+            DefaultComboBoxModel c2 = (DefaultComboBoxModel) cb_canpod.getModel();
+            c2.removeAllElements();
+            c2.addElement("2");
+            c2.addElement("3");
+            cb_canpod.setModel(c2);
         }
-    }//GEN-LAST:event_cb_tipoMouseClicked
+    }//GEN-LAST:event_cb_tipoActionPerformed
+
+    private void bt_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_agregarActionPerformed
+        
+    }//GEN-LAST:event_bt_agregarActionPerformed
+
+    private void cb_canpodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_canpodActionPerformed
+        String des, niv;
+        int mor=0;
+        if (cb_canpod.getSelectedItem()=="1") {
+            for (int i = 0; i < 1; i++) {
+                des=JOptionPane.showInputDialog("Ingrese un nivel de poder");
+                niv=JOptionPane.showInputDialog("Ingrese lamdescripcion del poder");
+                mor=JOptionPane.showConfirmDialog(this, "Es mortal?");
+                
+            }
+        }else if (cb_canpod.getSelectedItem()=="2") {
+            for (int i = 0; i < 2; i++) {
+                des=JOptionPane.showInputDialog("Ingrese un nivel de poder");
+                niv=JOptionPane.showInputDialog("Ingrese lamdescripcion del poder");
+                mor=JOptionPane.showConfirmDialog(this, "Es mortal?");
+                
+            }
+        }else if (cb_canpod.getSelectedItem()=="3") {
+            for (int i = 0; i < 3; i++) {
+                des=JOptionPane.showInputDialog("Ingrese un nivel de poder");
+                niv=JOptionPane.showInputDialog("Ingrese lamdescripcion del poder");
+                mor=JOptionPane.showConfirmDialog(this, "Es mortal?");
+                
+            }
+        }
+    }//GEN-LAST:event_cb_canpodActionPerformed
 
     /**
      * @param args the command line arguments
