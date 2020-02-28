@@ -30,6 +30,8 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         todo = new javax.swing.JDialog();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,15 +41,29 @@ public class login extends javax.swing.JFrame {
         bt_salir = new javax.swing.JButton();
         ps_pass = new javax.swing.JPasswordField();
 
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
+
         javax.swing.GroupLayout todoLayout = new javax.swing.GroupLayout(todo.getContentPane());
         todo.getContentPane().setLayout(todoLayout);
         todoLayout.setHorizontalGroup(
             todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(todoLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(154, 154, 154))
         );
         todoLayout.setVerticalGroup(
             todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, todoLayout.createSequentialGroup()
+                .addContainerGap(404, Short.MAX_VALUE)
+                .addGroup(todoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(84, 84, 84))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -141,16 +157,21 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_bt_salirMouseClicked
 
     private void bt_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ingresarMouseClicked
-       String usuario=tx_user.getText();
-       String con=ps_pass.getText();
-        if ( usuario == "stanlee") {
-            if (con=="spiderman99") {
-                todo.setVisible(true);
-            }else{
-                JOptionPane.showMessageDialog(this, "Contraseña no es valido");
-            }
-        }else {
+        String usuario = "stanlee";
+        String con = "spiderman99";
+        if (!tx_user.getText().equals(usuario)) {
             JOptionPane.showMessageDialog(this, "Usuario no es valido");
+        } else {
+            if (!con.equals(ps_pass.getText())) {
+                JOptionPane.showMessageDialog(this, "Contraseña no es valido");
+            } else {
+                todo.pack();
+                todo.setModal(true);
+                todo.setLocationRelativeTo(this);
+                todo.setVisible(true);
+
+            }
+
         }
     }//GEN-LAST:event_bt_ingresarMouseClicked
 
@@ -192,6 +213,8 @@ public class login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_ingresar;
     private javax.swing.JButton bt_salir;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
